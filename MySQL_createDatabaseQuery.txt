@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS quizweb_db;
+USE quizweb_db;
+CREATE TABLE IF NOT EXISTS user_list (
+    id INT AUTO_INCREMENT,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255),
+    fullname VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'teacher', 'student') NOT NULL DEFAULT 'student',
+    PRIMARY KEY (id, email)
+);
+INSERT INTO user_list (email, password, fullname, role) VALUES ('admin@hongphuc.vn', 'admin', 'Admin', 'admin');
+INSERT INTO user_list (email, password, fullname, role) VALUES ('teacher0@hongphuc.vn', 'teacher', 'Teacher 0', 'teacher');
+INSERT INTO user_list (email, password, fullname, role) VALUES ('student0@hongphuc.vn', 'student', 'Student 0', 'student');
+CREATE TABLE IF NOT EXISTS quiz_list (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(255) NOT NULL,
+    opa VARCHAR(255),
+    opb VARCHAR(255),
+    opc VARCHAR(255),
+    opd VARCHAR(255),
+    answer ENUM('A', 'B', 'C', 'D') NOT NULL,
+    explanation VARCHAR(255),
+    subject ENUM('IT', 'Math', 'Science', 'History', 'English', 'Geography', 'Art', 'Music', 'PE', 'Language', 'Other') NOT NULL,
+    topic VARCHAR(255)
+);
