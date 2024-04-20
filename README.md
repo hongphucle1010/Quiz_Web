@@ -28,7 +28,7 @@ Import the database from `/quiz_list.sql` to phpMyAdmin.
 Open a web browser and go to `localhost/quiz-website`.  (You may need to change the folder name if you cloned the project with a different name.)
 
 # Authors
-- Lê Hồng Phúc
+- [Lê Hồng Phúc](https://github.com/lhplhp10102004)
 - Thái Nguyễn Gia Bảo
 - Lê Anh Khoa
 - Nguyễn Tiến Khoa
