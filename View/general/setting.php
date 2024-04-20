@@ -1,12 +1,7 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
         body {
@@ -51,19 +46,19 @@
 </head>
 
 <body>
+    <?php
+    require_once 'View/general/navbar.php';
+    ?>
     <div class="container">
-        <h2>Login</h2>
-        <form action="index.php" method="post">
+        <h2>Changing Password</h2>
+        <form action="setting.php" method="post">
             <input type="text" name="email" placeholder="Email" required><br>
             <input type="password" name="password" placeholder="Password" required><br>
-            <input type="hidden" name="action" value="login_check">
-            <button type="submit" class="button">Login</button>
+            <input type="password" name="new_password" placeholder="New Password" required><br>
+            <input type="hidden" name="action" value="change-password-check">
+            <button type="submit" class="button">Change</button>
         </form>
-        <p class="mt-3" >Don't have an account?</p>
-        <form action="index.php" method="post">
-            <input type="hidden" name="action" value="signup">
-            <input type="submit" value="Sign Up" class="btn btn-info">
-        </form>
+
     </div>
 </body>
 

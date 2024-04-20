@@ -29,7 +29,7 @@
             box-sizing: border-box;
         }
 
-        .btn {
+        .button {
             width: 100%;
             padding: 10px;
             font-size: 16px;
@@ -40,7 +40,7 @@
             cursor: pointer;
         }
 
-        .btn:hover {
+        .button:hover {
             background-color: #45a049;
         }
     </style>
@@ -55,12 +55,12 @@
             <input type="password" name="password" placeholder="Password" required><br>
             <input type="password" name="confirm_password" placeholder="Confirm Password" required><br>
             <input type="hidden" name="action" value="signup_check">
-            <button type="submit" class="btn">Sign Up</button>
+            <button type="submit" class="button">Sign Up</button>
         </form>
-        <p>Already have an account?</p>
+        <p class="mt-3">Already have an account?</p>
         <form action="index.php" method="post">
             <input type="hidden" name="action" value="login">
-            <input type="submit" value="Login" class="btn">
+            <input type="submit" value="Login" class="btn btn-info">
         </form>
     </div>
 </body>

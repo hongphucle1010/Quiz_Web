@@ -26,9 +26,17 @@ switch ($action)
             $email = $_POST['email'];
             $password = $_POST['password'];
             $fullname = $_POST['fullname'];
-            $database -> create_user($email, $password, $fullname);
-            echo "<script>alert('Đăng ký thành công!');</script>";
-            require_once 'View/general/login.php';
+            $confirm_password = $_POST['confirm_password'];
+            if ($password != $confirm_password) {
+                echo "<script>alert('Mật khẩu không khớp!');</script>";
+                require_once 'View/general/signup.php';
+            }
+            else 
+            {
+                $database -> create_user($email, $password, $fullname);
+                echo "<script>alert('Đăng ký thành công!');</script>";
+                require_once 'View/general/login.php';
+            }
         }
         break;
     case 'login_check':
@@ -44,6 +52,14 @@ switch ($action)
             require_once 'View/general/login.php';
         }
         break;
+    case 'logout':
+        session_destroy();
+        header('Location: index.php');
+        break;
+    case 'setting':
+        require_once 'View/general/setting.php';
+        break;
+    case 'change-password-check':
     default:
         require_once 'View/general/home.php';
         break;

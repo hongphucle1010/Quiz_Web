@@ -1,19 +1,12 @@
 <?php
-if (isset($_POST['action']))
-{
+require_once 'View/general/navbar.php';
+if (isset($_POST['action'])) {
     $action = $_POST['action'];
-}
-else
-{
+} else {
     $action = '';
 }
 
-switch ($action)
-{
-    case 'logout':
-        session_destroy();
-        header('Location: index.php');
-        break;
+switch ($action) {
     default:
         require_once 'View/student/dashboard.php';
         break;

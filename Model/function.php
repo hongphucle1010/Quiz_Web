@@ -13,3 +13,8 @@ function set_user_session($result)
     $_SESSION['fullname'] = $result['fullname'];
     $_SESSION['role'] = $result['role'];
 }
+
+function remove_space($string)
+{
+    return str_replace(' ', '', $string);
+}

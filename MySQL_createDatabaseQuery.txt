@@ -13,13 +13,19 @@ INSERT INTO user_list (email, password, fullname, role) VALUES ('teacher0@hongph
 INSERT INTO user_list (email, password, fullname, role) VALUES ('student0@hongphuc.vn', 'student', 'Student 0', 'student');
 CREATE TABLE IF NOT EXISTS quiz_list (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    question VARCHAR(255) NOT NULL,
+    quizname VARCHAR(255) NOT NULL UNIQUE,
+    teacherid INT NOT NULL,
+    FOREIGN KEY (teacherid) REFERENCES user_list(id)
+);
+
+CREATE TABLE IF NOT EXISTS question_list (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(255) NOT NULL UNIQUE,
     opa VARCHAR(255),
     opb VARCHAR(255),
     opc VARCHAR(255),
     opd VARCHAR(255),
     answer ENUM('A', 'B', 'C', 'D') NOT NULL,
-    explanation VARCHAR(255),
-    subject ENUM('IT', 'Math', 'Science', 'History', 'English', 'Geography', 'Art', 'Music', 'PE', 'Language', 'Other') NOT NULL,
-    topic VARCHAR(255)
+    quizid INT NOT NULL,
+    FOREIGN KEY (quizid) REFERENCES quiz_list(id)
 );

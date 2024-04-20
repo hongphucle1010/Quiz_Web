@@ -11,12 +11,31 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="Lib/css/bootstrap.css" rel="stylesheet">
+    <?php require_once "View/general/head-section.php"; ?>
+    <style>
+        #add-question{
+            border-radius: 50%;
+            background-color: orange;            
+            border: none;
+        }
+        #add-question:hover{
+            background-color: yellow;
+        }   
+    
+        .hide{
+            display: none;
+        }
+
+        #add-question-area{
+            padding: 20px;
+            border-radius: 10px;
+            background-color: pink;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-	
+
 </body>
 </html>
 
@@ -34,6 +53,10 @@ else {
 
 
 switch ($controller) {
+    case 'logout':
+        session_destroy();
+        header('Location: index.php');
+        break;
     case 'admin':
         require_once 'Controller/admin/index.php';
         break;
