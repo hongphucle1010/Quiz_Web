@@ -22,7 +22,7 @@ git clone
 Start Apache and MySQL in XAMPP.
 
 ## 4. Import database
-Import the database from `/quiz_list.sql` to phpMyAdmin.
+Import the database from `/quiz_list.sql` to phpMyAdmin `localhost/phpmyadmin`.
 
 ## 5. Run the project
 Open a web browser and go to `localhost/quiz-website`.  (You may need to change the folder name if you cloned the project with a different name.)
